@@ -6,7 +6,7 @@ type Props = {}
 
 const Header = (props: Props) => {
   return (
-      <header>
+      <header className="flex p-5 justify-between sticky top-0 bg-white z-50 shadow-md">
           <div className="flex space-x-2 items-center">
               <Image
                   alt='logo'
@@ -24,13 +24,14 @@ const Header = (props: Props) => {
                       Powered by Chat GPT and The Force
                   </h2>
               </div>
-              
-              <div>
-                  <Link className="text-green-800" href={'https://t.me/finneganlucky'}>
-                      CONTACT ME IN TELEGRAM
-                  </Link>
-              </div>
+            
           </div>
+          <div className="flex text-xs md:text-base items-center divide-x">
+                  <Link className="text-green-800 px-2 text-right font-light" href={'https://t.me/finneganlucky'}>
+                      CONTACT ME IN TELEGRAM
+              </Link>
+              <span>🇺🇦</span>
+              </div>
       </header>
   )
 }
