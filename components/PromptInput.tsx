@@ -1,10 +1,17 @@
 'use client'
+import fetchSuggestionFromChatGPT from '@/lib/fetchSuggestionFromChatGPT'
 import React, { useState } from 'react'
+import useSWR from 'swr'
 
-type Props = {}
+type Props = {
+}
 
 const PromptInput = (props: Props) => {
     const [input, setInput] = useState('')
+
+    const { data: suggestion, isLoading, mutate, isValidating } = useSWR('/api/suggestion', fetchSuggestionFromChatGPT, {
+        revalidateOnFocus: false,
+    })
     
   return (
       <div className="m-10">
