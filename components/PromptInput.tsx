@@ -12,6 +12,9 @@ const PromptInput = (props: Props) => {
     const { data: suggestion, isLoading, mutate, isValidating } = useSWR('/api/suggestion', fetchSuggestionFromChatGPT, {
         revalidateOnFocus: false,
     })
+
+
+   console.log('this is a suggestion with the answer', suggestion) 
     
   return (
       <div className="m-10">
